@@ -1,0 +1,341 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.main {
+    height: 100vh;
+    background-color: #f4f4f5;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+.search__box {
+    width: 80vw;
+    height: 60vh;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectBox {
+    min-width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.flightbox {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    /* box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2); */
+    cursor: pointer;
+}
+
+.flightbox.active {
+     background-color: rgb(160, 160, 156);
+    color: #ffffff;
+}
+
+.flightbox img {
+    margin-bottom: 20px;	
+}
+
+
+.flightbox.active:before {
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+   border-width: 0 10px 10px 10px;
+  border-color: transparent transparent rgb(160, 160, 156) transparent;
+  bottom: -10px;
+  transform: rotate(180deg);
+  z-index:9998;
+}
+/* .flightbox:nth-child(2) {
+    background-color: rgb(160, 160, 156);
+    color: #ffffff;
+} */
+
+
+/* .flightbox:nth-child(2):before {
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+   border-width: 0 10px 10px 10px;
+  border-color: transparent transparent rgb(160, 160, 156) transparent;
+  bottom: -10px;
+  transform: rotate(180deg);
+  z-index:9998;
+} */
+/* .flightbox:before {
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+   border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #ffffff transparent;
+  top: -10px;
+  z-index:9998;
+} */
+
+
+.searchSelect {
+    /* width: 60vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 50px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.searchBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.searchText {
+    margin-bottom: 1.25rem;
+    margin-top: -25px;
+    display: flex;
+    flex-direction: row	;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchText span{
+    margin-right: 20px;
+}
+
+.searchText span:nth-child(2)::after {
+    content: "|";
+    margin: 0 10px;
+    font-weight: 100;	
+    color: #cbcbd4;
+}
+
+.searchText span:nth-child(3) {
+    margin-left: -20px;
+}
+
+.search__boxes {
+    width: 150px;
+    height: 150px;
+    margin: 0 10px;
+}
+
+.search__boxes:first-child {
+    width: 300px;
+}
+
+.fromTo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.from, .to {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 45%;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #a7a7ad;
+}
+.first {
+    font-weight: 300;
+}
+
+.second {
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.from span input, .to span input {
+    width: 275px;
+    border: none;
+}
+
+.from span input:active {
+    border: none;
+}
+
+.outbound, .return {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 5px;
+    border: 1px solid #a7a7ad;
+}
+
+.num{
+    margin: 10px 0;
+    font-size: 32px;
+    font-weight: 500;
+    color: #b73e3e;
+    cursor: pointer;
+}
+
+.roomsFlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rooms, .flightclass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+    border-radius: 5px;
+    border: 1px solid #a7a7ad;
+}
+
+.roomType, .travelClass {
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+    align-items: start;
+    margin-left: 10px;
+}
+
+
+.searchIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #b73e3e;
+    cursor: pointer;
+}
+
+.searchIcon img {
+    width: 50px;
+}
+
+.date {
+    position: relative;
+    top: 0;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+.modal__close__button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-weight: 700;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.options {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -50px;
+    background-color: #ffffff;
+    color: gray;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4 );
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .optionItem {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .optionCount button{
+        padding: 3px 8px;
+        /* font-size: 16px;	 */
+    }
+
+    .optionCount {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10px;
+        color: #000000;
+    }
+
+    .optionCounterButton {
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+        border: 1px solid #b73e3e;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
+
+    .optionCounterButton:disabled {
+        cursor:not-allowed;
+    }
+
+    #calcPassenger {
+        width: 90%;
+        margin: 8px 5px;
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #b73e3e;
+        background-color: #ffffff;
+    }
+
+    
+
+

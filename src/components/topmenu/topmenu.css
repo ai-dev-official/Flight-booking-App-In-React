@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main__container {
+    border-top: .1px solid #f4f4f5;
+}
+.menu__container {
+    max-width: 1200px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    margin-left: 18px;
+    
+}
+
+.menu span {
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ukImg {
+    width: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 20px;
+    cursor: pointer;
+}
