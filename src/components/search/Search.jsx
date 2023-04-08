@@ -92,13 +92,13 @@ const Search = () => {
               <div className="from">
                 <span className="first">From</span>
                 <span>
-                  <input type="text" className="second" placeholder="London, London All Airports" />
+                  <input type="text" className="second" placeholder="New York" />
                 </span>
               </div>
               <div className="to">
                 <span className="first">To</span>
                 <span className="second">
-                  <input type="text" className="second" placeholder="Madrid City, C. Madrid, Spain" />
+                  <input type="text" className="second" placeholder="Dubai" />
                 </span>
               </div>
             </div>

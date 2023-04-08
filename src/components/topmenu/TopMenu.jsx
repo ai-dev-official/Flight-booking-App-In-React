@@ -1,5 +1,5 @@
 import React from 'react';
-import UKflagIcon from '../assets/uk.png';
+import UKflagIcon from '../assets/us.png';
 import './topmenu.css';
 
 const TopMenu = () => {
@@ -8,21 +8,21 @@ const TopMenu = () => {
       <div className="menu__container">
         <div className="menu">
           <div class="discover">
-            <span>Discover</span>
+            <span>Popular</span>
           </div>
           <div class="book">
-            <span>Book</span>
+            <span>Advanced Search</span>
           </div>
           <div class="manage">
-            <span>Manage</span>
+            <span>Compare</span>
           </div>
           <div class="help">
-            <span>Help</span>
+            <span>Seating</span>
           </div>
         </div>
         <div className="lang">
           <img className="ukImg" src={UKflagIcon} alt="UK Flag" />
-          <span>United Kingdom - English</span>
+          <span>United States - English</span>
         </div>
       </div>
     </div>
