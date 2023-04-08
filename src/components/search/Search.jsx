@@ -8,6 +8,7 @@ import CarIcon from '../assets/car.svg';
 import CarIconWhite from '../assets/carwhite.svg';
 import SearchIcon from '../assets/searchwhite.svg';
 import BedIconWhite from '../assets/bedwhite.svg';
+import LandingFlight from '../assets/landing.svg';
 // import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -89,27 +90,31 @@ const Search = () => {
           </div>
           <div className="searchBoxes">
             <div className="search__boxes fromTo">
-              <div className="from">
-                <span className="first">From</span>
-                <span>
-                  <input type="text" className="second" placeholder="New York" />
-                </span>
+            
+              <div className='takeoff'>
+                <span className='whereto'><img src={FlightIcon} alt="Flight" /></span>
+                <div className="from">
+                  <label htmlFor="from">From</label>
+                  <input type="text" id="from" className="second" placeholder="New York" onFocus={(event) => { event.target.placeholder = '' }} />
+                </div>
               </div>
-              <div className="to">
-                <span className="first">To</span>
-                <span className="second">
-                  <input type="text" className="second" placeholder="Dubai" />
-                </span>
+              <div className="landing">
+                <span className='whereto'><img src={LandingFlight} alt="Flight" /></span>
+                <div className="to">
+                  <label htmlFor="to">To</label>
+                  <input type="text" id="to" className="second" placeholder="Dubai" onFocus={(event) => { event.target.placeholder = '' }} />
+                </div>
               </div>
             </div>
+
             <div className="search__boxes outbound">
-              <span>Outbound</span>
+              <span className='fligtDate'>Outbound</span>
               <span onMouseUp={() => { setOpenDate(!opnDate) }} className="num">{`${format(date[0].startDate, "dd")}`}</span>
               <span>{`${format(date[0].startDate, "MMMM")}`}</span>
              
             </div>
             <div className="search__boxes return">
-              <span>Return Flight</span>
+              <span className='fligtDate'>Return Flight</span>
               <span onMouseUp={() => {setOpenDate(!opnDate)}} className="num">{`${format(date[0].endDate, "dd")}`}</span>
               <span>{`${format(date[0].startDate, "MMMM")}`}</span>
             
@@ -118,10 +123,10 @@ const Search = () => {
               <div className="rooms">
                 <span><img src={BedIcon} alt="" /></span>
                 <div className="roomType">
-                  <span className="first">From</span>
+                  <span className="topspan">From</span>
                   {/* <span className="second">{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span> */}
-                  <span onClick={()=>setOpenOptions(!openOptions)} className="second">
-                    {passenger.count} Persons {passenger.rooms} Rm
+                  <span onClick={()=>setOpenOptions(!openOptions)} className="bottomspan">
+                    {passenger.count} Persons {passenger.rooms} Room
                   </span>
                   {openOptions && <div className="options">
                     <div className="optionItem">
@@ -157,8 +162,8 @@ const Search = () => {
               <div className="flightclass">
                 <span><img src={FlightIcon} alt="Flight" /></span>
                 <div className="travelClass">
-                  <span className="first">Travel Class</span>
-                  <span className="second">Economy</span>
+                  <span className="topspan">Travel Class</span>
+                  <span className="bottomspan">Economy</span>
                 </div>
               </div>
             </div>
@@ -170,7 +175,7 @@ const Search = () => {
         {opnDate && (
           <div className="modal">
             <div className="modal__content">
-              <button className="modal__close__button" onClick={() => setOpenDate(false)}>×</button>
+            
               <DateRangePicker
                 editableDateInputs={true}
                 onChange={item => setDate([item.selection])}
@@ -180,6 +185,7 @@ const Search = () => {
                 className="date"
                 direction="horizontal"
               />
+              <button className="modal__close__button" onClick={() => setOpenDate(false)}>×</button>
             </div>
           </div>
         )}
